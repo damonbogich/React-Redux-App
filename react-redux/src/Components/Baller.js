@@ -2,11 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {fetchBaller} from '../actions';
 import Loader from 'react-loader-spinner';
+import styled from 'styled-components';
+
+
+const StyledH2 = styled.h2 `
+    color: blue;
+    font-size: 2rem;
+`
 
 const Baller = props => {
     return (
         <div>
-            <h1>Baller Page</h1>
+            <StyledH2>Baller Page</StyledH2>
             <button onClick= {props.fetchBaller}>Get baller</button>
             {!props.baller && !props.isLoading && <h2>Get a baller!</h2>}
             {props.isLoading && (
